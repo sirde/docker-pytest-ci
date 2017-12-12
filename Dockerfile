@@ -24,8 +24,8 @@ RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
   
   
-RUN pip install teamcity-messages pytest mock pytest-cov pytest mock
-RUN pip3 install teamcity-messages pytest mock pytest-cov pytest mock
+RUN pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict
+RUN pip3 install teamcity-messages pytest mock pytest-cov pytest mock xmltodict
 
 #Wrapper for python 2 and 3
 COPY py /scripts/py
