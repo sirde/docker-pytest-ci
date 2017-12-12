@@ -32,5 +32,8 @@ COPY py /scripts/py
 
 ENV PATH="/scripts:${PATH}"
 
+VOLUME /workdir
+WORKDIR /workdir
+
 # if needed
-#ENTRYPOINT []
+ENTRYPOINT ["py.test"]
