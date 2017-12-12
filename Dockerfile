@@ -35,5 +35,4 @@ ENV PATH="/scripts:${PATH}"
 VOLUME /workdir
 WORKDIR /workdir
 
-# if needed
-ENTRYPOINT ["py.test"]
+CMD ["py.test"]
