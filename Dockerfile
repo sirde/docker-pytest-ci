@@ -20,19 +20,19 @@ RUN apt-get update && apt-get install -y \
   python-pip                \
   python3.6
   
-RUN pip install --upgrade pip
-RUN pip3 install --upgrade pip
-  
-  
-RUN pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests
-RUN pip3 install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests
-
 #Wrapper for python 2 and 3
 COPY py /scripts/py
 
 ENV PATH="/scripts:${PATH}"
 
+RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
+RUN py -3.6 -m pip install --upgrade pip
+
+RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests
+RUN py -3.6 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests
+
 VOLUME /workdir
 WORKDIR /workdir
 
-CMD ["py.test"]
+CMD ["py -3.6 -m pytest"]
