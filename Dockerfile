@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y \
 #Wrapper for python 2 and 3
 COPY py /scripts/py
 
+RUN ["chmod", "+x", "/scripts/py”]
+
 ENV PATH="/scripts:${PATH}"
 
 RUN pip install --upgrade pip
