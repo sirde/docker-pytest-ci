@@ -12,11 +12,17 @@ RUN apt-get update && apt-get install -y \
   unzip         				\
   wget                          \
   python2.7                     \
-  software-properties-common
-
-RUN apt-get update && apt-get install -y \
-  python3-pip               \
-  python-pip                
+  software-properties-common    \
+  build-essential               \
+  python-dev                    \
+  python-distlib                \
+  python-setuptools             \
+  python-pip                    \
+  python3-pip                   \
+  python-wheel                  \
+  libzmq-dev                    \
+  libgdal-dev          
+    
   
 #Wrapper for python 2 and 3
 COPY py /scripts/py
