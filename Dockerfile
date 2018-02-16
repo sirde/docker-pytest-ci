@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM resin/rpi-raspbian
 
 LABEL maintainer="Cedric Gerber <gerber.cedric@gmail.com>"
 
