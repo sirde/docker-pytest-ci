@@ -41,8 +41,9 @@ RUN py -2 -m pip install bottleneck rtree
 RUN apt-get install python-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas
 
 
-RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
-RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
+RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs
+RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs
+
 
 VOLUME /workdir
 WORKDIR /workdir
