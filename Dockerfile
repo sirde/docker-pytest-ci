@@ -21,7 +21,8 @@ RUN apt-get update && apt-get install -y \
   python3-pip                   \
   python-wheel                  \
   libzmq-dev                    \
-  libgdal-dev          
+  libgdal-dev                   \
+  libfreetype6-dev
     
   
 #Wrapper for python 2 and 3
