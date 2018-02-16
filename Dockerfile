@@ -14,11 +14,9 @@ RUN apt-get update && apt-get install -y \
   python2.7                     \
   software-properties-common
 
-RUN add-apt-repository ppa:jonathonf/python-3.6
 RUN apt-get update && apt-get install -y \
   python3-pip               \
-  python-pip                \
-  python3.6
+  python-pip                
   
 #Wrapper for python 2 and 3
 COPY py /scripts/py
@@ -29,12 +27,11 @@ ENV PATH="/scripts:${PATH}"
 
 RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
-RUN py -3.6 -m pip install --upgrade pip
 
 RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
-RUN py -3.6 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
+RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
 
 VOLUME /workdir
 WORKDIR /workdir
 
-CMD ["py -3.6 -m pytest"]
+CMD ["py -3 -m pytest"]
