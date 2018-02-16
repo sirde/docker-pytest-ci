@@ -44,7 +44,7 @@ RUN apt-get install python-numpy python-matplotlib python-mpltoolkits.basemap py
 RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs
 RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs
 
-RUN py -2 -m pip install -u requests
+RUN py -2 -m pip install -U requests
 
 
 VOLUME /workdir
