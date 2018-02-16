@@ -28,6 +28,12 @@ ENV PATH="/scripts:${PATH}"
 RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
 
+RUN apt-get install xsel xclip libxml2-dev libxslt-dev python-lxml python-h5py python-numexpr python-dateutil python-six python-tz python-bs4 python-html5lib python-openpyxl python-tables python-xlrd python-xlwt cython python-sqlalchemy python-xlsxwriter python-jinja2 python-boto python-gflags python-googleapi python-httplib2 python-zmq libspatialindex-dev
+RUN py -2 -m pip install bottleneck rtree
+
+RUN apt-get install python-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas
+
+
 RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
 RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine
 
