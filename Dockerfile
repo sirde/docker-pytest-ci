@@ -45,6 +45,7 @@ RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xm
 RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial
 
 RUN py -2 -m pip install -U requests
+RUN py -3 -m pip install -U requests
 
 
 VOLUME /workdir
