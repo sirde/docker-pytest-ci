@@ -47,6 +47,9 @@ RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xm
 RUN py -2 -m pip install -U requests
 RUN py -3 -m pip install -U requests
 
+RUN apt-get update && apt-get install -y \
+    usbutils
+
 RUN py -2 -m pip install -U nfcpy
 RUN py -3 -m pip install -U nfcpy
 
