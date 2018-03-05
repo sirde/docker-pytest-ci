@@ -42,7 +42,7 @@ RUN apt-get install python-numpy python3-numpy python-matplotlib python-mpltoolk
 
 
 RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial
-RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial
+RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial 
 
 RUN py -2 -m pip install -U requests
 RUN py -3 -m pip install -U requests
@@ -50,8 +50,8 @@ RUN py -3 -m pip install -U requests
 RUN apt-get update && apt-get install -y \
     usbutils
 
-RUN py -2 -m pip install -U nfcpy
-RUN py -3 -m pip install -U nfcpy
+RUN py -2 -m pip install -U nfcpy ipaddress
+RUN py -3 -m pip install -U nfcpy ipaddress
 
 
 VOLUME /workdir
