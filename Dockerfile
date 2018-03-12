@@ -50,8 +50,8 @@ RUN py -3 -m pip install -U requests
 RUN apt-get update && apt-get install -y \
     usbutils
 
-RUN py -2 -m pip install -U nfcpy ipaddress
-RUN py -3 -m pip install -U nfcpy ipaddress
+RUN py -2 -m pip install -U nfcpy ipaddress flaky
+RUN py -3 -m pip install -U nfcpy ipaddress flaky
 
 
 VOLUME /workdir
