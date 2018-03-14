@@ -48,13 +48,14 @@ RUN py -2 -m pip install -U requests
 RUN py -3 -m pip install -U requests
 
 RUN apt-get update && apt-get install -y \
-    usbutils
+    usbutils dos2unix
 
 RUN py -2 -m pip install -U nfcpy ipaddress flaky
 RUN py -3 -m pip install -U nfcpy ipaddress flaky
 
 COPY patch.txt /scripts/patch.txt
-RUN patch /usr/local/lib/python2.7/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
+RUN dos2unix patch.txt
+RUN patch --verbose /usr/local/lib/python2.7/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
 
 VOLUME /workdir
 WORKDIR /workdir

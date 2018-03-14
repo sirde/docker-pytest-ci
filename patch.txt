@@ -242,11 +242,3 @@
 +    b"\x00\x04\x04\x05\x02\x02\x15\x03": NT3H2211,
  }
  
- 
-@@ -763,4 +983,4 @@
-         log.debug(repr(error))
-         return
- 
--    return MifareUltralight(clf, target)
-\ No newline at end of file
-+    return MifareUltralight(clf, target)
