@@ -61,7 +61,7 @@ COPY bitscope-library_2.0.FE26B_armhf.deb /scripts/bitscope-library_2.0.FE26B_ar
 RUN dpkg -i /scripts/bitscope-library_2.0.FE26B_armhf.deb
 
 COPY python-bindings-2.0-DC01L /scripts/python-bindings-2.0-DC01L
-RUN cd /scripts/python-bindings-2.0-DC01L
+WORKDIR /scripts/python-bindings-2.0-DC01L
 RUN pwd
 RUN ls
 RUN py -2 setup-bitlib.py install
