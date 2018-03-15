@@ -60,6 +60,9 @@ RUN patch --verbose /usr/local/lib/python2.7/dist-packages/nfc/tag/tt2_nxp.py < 
 COPY bitscope-library_2.0.FE26B_armhf.deb /scripts/bitscope-library_2.0.FE26B_armhf.deb
 RUN dpkg -i /scripts/bitscope-library_2.0.FE26B_armhf.deb
 
+COPY python-bindings-2.0-DC01L /scripts/python-bindings-2.0-DC01L
+RUN py -2 /scripts/python-bindings-2.0-DC01L/setup-bitlib.py install
+
 VOLUME /workdir
 WORKDIR /workdir
 
