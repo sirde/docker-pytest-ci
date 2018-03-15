@@ -64,7 +64,7 @@ COPY python-bindings-2.0-DC01L /scripts/python-bindings-2.0-DC01L
 WORKDIR /scripts/python-bindings-2.0-DC01L
 RUN pwd
 RUN ls
-RUN py -2 setup-bitlib.py install
+RUN  BASECFLAGS="" OPT="" CFLAGS="-O3" py -2 setup-bitlib.py install
 
 
 VOLUME /workdir
