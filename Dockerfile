@@ -7,7 +7,7 @@ LABEL maintainer="Cedric Gerber <gerber.cedric@gmail.com>"
 #see https://askubuntu.com/questions/551840/unable-to-locate-package-libc6-dbgi386-in-docker
 #http://processors.wiki.ti.com/index.php/Linux_Host_Support_CCSv6
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y  \
   libpython2.7				    \
   unzip         				\
   wget                          \
@@ -22,9 +22,13 @@ RUN apt-get update && apt-get install -y \
   python-wheel                  \
   libzmq-dev                    \
   libgdal-dev                   \
-  libfreetype6-dev
+  libfreetype6-dev              \
+  xsel xclip libxml2-dev libxslt-dev python-lxml python-h5py python-numexpr python-dateutil python-six python-tz python-bs4 python-html5lib python-openpyxl python-tables python-xlrd python-xlwt cython python-sqlalchemy python-xlsxwriter python-jinja2 python-boto python-gflags python-googleapi python-httplib2 python-zmq libspatialindex-dev \
+  python-numpy python3-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas \
+  usbutils dos2unix \
+  python3-dev
+
     
-  
 #Wrapper for python 2 and 3
 COPY py /scripts/py
 
@@ -32,26 +36,13 @@ RUN ["chmod", "+x", "/scripts/py"]
 
 ENV PATH="/scripts:${PATH}"
 
-RUN pip install --upgrade pip
-RUN pip3 install --upgrade pip
+RUN pip install --upgrade pip setuptools
+RUN pip3 install --upgrade pip setuptools
 
-RUN apt-get install xsel xclip libxml2-dev libxslt-dev python-lxml python-h5py python-numexpr python-dateutil python-six python-tz python-bs4 python-html5lib python-openpyxl python-tables python-xlrd python-xlwt cython python-sqlalchemy python-xlsxwriter python-jinja2 python-boto python-gflags python-googleapi python-httplib2 python-zmq libspatialindex-dev
-RUN py -2 -m pip install bottleneck rtree
+RUN apt-get install libffi6 libffi-dev
 
-RUN apt-get install python-numpy python3-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas
-
-
-RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial
-RUN py -3 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial 
-
-RUN py -2 -m pip install -U requests
-RUN py -3 -m pip install -U requests
-
-RUN apt-get update && apt-get install -y \
-    usbutils dos2unix
-
-RUN py -2 -m pip install -U nfcpy ipaddress flaky
-RUN py -3 -m pip install -U nfcpy ipaddress flaky
+RUN py -2 -m pip install -U bottleneck rtree teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
+RUN py -3 -m pip install -U bottleneck rtree teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
 
 COPY patch.txt /scripts/patch.txt
 RUN dos2unix /scripts/patch.txt
