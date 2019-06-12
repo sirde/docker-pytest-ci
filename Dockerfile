@@ -8,7 +8,7 @@ LABEL maintainer="Cedric Gerber <gerber.cedric@gmail.com>"
 #see https://askubuntu.com/questions/551840/unable-to-locate-package-libc6-dbgi386-in-docker
 #http://processors.wiki.ti.com/index.php/Linux_Host_Support_CCSv6
 
-RUN apt-get update && apt-get install -y   \
+RUN apt-get clean && apt-get update && apt-get install -y   \
    python3-numpy 				\
 #  libpython2.7				    \
 #  unzip         				\
