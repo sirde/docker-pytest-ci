@@ -34,7 +34,7 @@ RUN py -3.6 -m pip install --upgrade pip
 #RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine pyopenssl
 RUN py -3.6 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine pyopenssl
 
-RUN py -3.6 -m pip install pyserial
+RUN py -3.6 -m pip install pyserial intelhex
 
 VOLUME /workdir
 WORKDIR /workdir
