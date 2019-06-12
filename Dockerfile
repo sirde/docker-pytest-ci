@@ -20,7 +20,7 @@ RUN apt-get clean && apt-get update && apt-get install -y   \
 #  python-distlib                \
 #  python-setuptools             \
 #  python-pip                    \
-#  python3-pip                   \
+  python3-pip                   \
 #  python-wheel                  \
 #  libzmq-dev                    \
 #  libgdal-dev                   \
