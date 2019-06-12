@@ -40,7 +40,7 @@ RUN ["chmod", "+x", "/scripts/py"]
 ENV PATH="/scripts:${PATH}"
 
 #RUN pip install --upgrade pip setuptools
-#RUN pip3 install --upgrade pip setuptools
+RUN pip3 install --upgrade pip setuptools
 
 #RUN apt-get install libffi6 libffi-dev
 
