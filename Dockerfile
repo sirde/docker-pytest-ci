@@ -8,16 +8,16 @@ LABEL maintainer="Cedric Gerber <gerber.cedric@gmail.com>"
 #http://processors.wiki.ti.com/index.php/Linux_Host_Support_CCSv6
 
 RUN apt-get update && apt-get install -y \
-  libpython2.7				    \
+#  libpython2.7				    \
   unzip         				\
   wget                          \
-  python2.7                     \
+#  python2.7                     \
   software-properties-common
 
 RUN add-apt-repository ppa:jonathonf/python-3.6
 RUN apt-get update && apt-get install -y \
   python3-pip               \
-  python-pip                \
+#  python-pip                \
   python3.6
   
 #Wrapper for python 2 and 3
@@ -27,11 +27,11 @@ RUN ["chmod", "+x", "/scripts/py"]
 
 ENV PATH="/scripts:${PATH}"
 
-RUN pip install --upgrade pip
+#RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
 RUN py -3.6 -m pip install --upgrade pip
 
-RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine pyopenssl
+#RUN py -2 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine pyopenssl
 RUN py -3.6 -m pip install teamcity-messages pytest mock pytest-cov pytest mock xmltodict requests pylint coloredlogs plotnine pyopenssl
 
 VOLUME /workdir
