@@ -44,8 +44,8 @@ ENV PATH="/scripts:${PATH}"
 
 #RUN apt-get install libffi6 libffi-dev
 
-#RUN py -2 -m pip install -U bottleneck rtree teamcity-messages pytest mock pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
-RUN py -3 -m pip install -U bottleneck rtree teamcity-messages pytest mock pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
+#RUN py -2 -m pip install -U bottleneck rtree teamcity-messages pytest pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
+RUN py -3 -m pip install -U bottleneck rtree teamcity-messages pytest pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
 
 COPY patch.txt /scripts/patch.txt
 RUN dos2unix /scripts/patch.txt
