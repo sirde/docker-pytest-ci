@@ -15,7 +15,7 @@ RUN apt-get clean && apt-get update && apt-get install -y   \
 #  wget                          \
 #  python2.7                     \
 #  software-properties-common    \
-#  build-essential               \
+  build-essential               \
 #  python-dev                    \
 #  python-distlib                \
 #  python-setuptools             \
@@ -28,8 +28,8 @@ RUN apt-get clean && apt-get update && apt-get install -y   \
 #  xsel xclip libxml2-dev libxslt-dev python3-numpy \
 #  python-lxml python-h5py python-numexpr python-dateutil python-six python-tz python-bs4 python-html5lib python-openpyxl python-tables python-xlrd python-xlwt cython python-sqlalchemy python-xlsxwriter python-jinja2 python-boto python-gflags python-googleapi python-httplib2 python-zmq libspatialindex-dev \
 #  python-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas \
-  usbutils dos2unix 
-#  python3-dev
+  usbutils dos2unix             \
+  python3-dev
 
     
 #Wrapper for python 2 and 3
