@@ -103,7 +103,7 @@
 +            raise ValueError("password must be at least 6 bytes")
 +
 +        key = password[0:6] if password != b"" else b"\xFF\xFF\xFF\xFF\0\0"
-+        log.debug("protect with key " + hexlify(key))
++        log.debug("protect with key %s", hexlify(key))
 +
 +        # read CFG0, CFG1, PWD and PACK
 +        cfg = self.read(self._cfgpage)
@@ -167,11 +167,11 @@
 +            raise ValueError("password must be 4 bytes")
 +
 +        key = password[0:4] if password != b"" else b"\xFF\xFF\xFF\xFF"
-+        log.debug("authenticate with key " + hexlify(key))
++        log.debug("authenticate with key %s", hexlify(key))
 +
 +        try:
 +            rsp = self.transceive(b"\x1B" + key[0:4])
-+            print('key', hexlify(key))
++            print('key %s' % hexlify(key))
 +            print('rsp:', rsp)
 +            return True
 +            # return rsp == key[4:6]
