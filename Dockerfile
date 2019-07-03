@@ -1,5 +1,5 @@
-FROM resin/rpi-raspbian
-#FROM balenalib/raspberrypi3-debian
+#FROM resin/rpi-raspbian
+FROM balenalib/raspberrypi3-debian
 
 LABEL maintainer="Cedric Gerber <gerber.cedric@gmail.com>"
 
