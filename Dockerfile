@@ -47,7 +47,8 @@ RUN py -3 -m pip install -U bottleneck rtree teamcity-messages pytest pytest-cov
 
 COPY patch.txt /scripts/patch.txt
 RUN dos2unix /scripts/patch.txt
-RUN patch --verbose /usr/local/lib/python2.7/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
+RUN patch --verbose /usr/local/lib/python3/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
+#RUN patch --verbose /usr/local/lib/python2.7/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
 
 #COPY bitscope-library_2.0.FE26B_armhf.deb /scripts/bitscope-library_2.0.FE26B_armhf.deb
 #RUN dpkg -i /scripts/bitscope-library_2.0.FE26B_armhf.deb
