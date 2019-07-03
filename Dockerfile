@@ -29,7 +29,7 @@ RUN apt-get clean && apt-get update && apt-get install -y   \
 #  python-lxml python-h5py python-numexpr python-dateutil python-six python-tz python-bs4 python-html5lib python-openpyxl python-tables python-xlrd python-xlwt cython python-sqlalchemy python-xlsxwriter python-jinja2 python-boto python-gflags python-googleapi python-httplib2 python-zmq libspatialindex-dev \
 #  python-numpy python-matplotlib python-mpltoolkits.basemap python-scipy python-sklearn python-statsmodels python-pandas \
   usbutils dos2unix             \
-  python3-dev
+  python3-dev apt-get install libffi6 libffi-dev libssl-dev
 
     
 #Wrapper for python 2 and 3
@@ -41,8 +41,6 @@ ENV PATH="/scripts:${PATH}"
 
 #RUN pip install --upgrade pip setuptools
 RUN pip3 install --upgrade pip setuptools
-
-RUN apt-get install libffi6 libffi-dev
 
 #RUN py -2 -m pip install -U bottleneck rtree teamcity-messages pytest pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
 RUN py -3 -m pip install -U bottleneck rtree teamcity-messages pytest pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl
