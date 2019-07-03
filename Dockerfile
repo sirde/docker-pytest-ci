@@ -35,7 +35,7 @@ COPY patch.txt /scripts/patch.txt
 RUN dos2unix /scripts/patch.txt
 
 RUN find / -name "tt2_nxp.py"
-RUN patch --verbose /usr/local/lib/python3.5/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
+RUN patch --verbose /usr/local/lib/python3.6/dist-packages/nfc/tag/tt2_nxp.py < /scripts/patch.txt 
 
 #COPY bitscope-library_2.0.FE26B_armhf.deb /scripts/bitscope-library_2.0.FE26B_armhf.deb
 #RUN dpkg -i /scripts/bitscope-library_2.0.FE26B_armhf.deb
