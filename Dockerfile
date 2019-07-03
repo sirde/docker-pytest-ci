@@ -1,5 +1,6 @@
 #FROM resin/rpi-raspbian
-FROM balenalib/raspberrypi3-debian
+#FROM balenalib/raspberrypi3-debian
+FROM balenalib/raspberrypi3-ubuntu-python:latest
 
 LABEL maintainer="Cedric Gerber <gerber.cedric@gmail.com>"
 
