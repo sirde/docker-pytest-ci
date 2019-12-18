@@ -29,7 +29,7 @@ ENV PATH="/scripts:${PATH}"
 
 RUN pip3 install --upgrade pip setuptools
 
-RUN py -3 -m pip install -U bottleneck rtree teamcity-messages pytest pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl dateutil
+RUN py -3 -m pip install -U bottleneck teamcity-messages pytest pytest-cov mock xmltodict requests pylint coloredlogs pyserial nfcpy ipaddress flaky pyopenssl python-dateutil pytz rauth rtree
 
 COPY patch.txt /scripts/patch.txt
 RUN dos2unix /scripts/patch.txt
